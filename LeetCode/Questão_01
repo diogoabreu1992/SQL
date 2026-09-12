@@ -1,0 +1,31 @@
+Accepted
+Runtime: 104 ms
+Case 1
+Input
+Person =
+| personId | lastName | firstName |
+| -------- | -------- | --------- |
+| 1        | Wang     | Allen     |
+| 2        | Alice    | Bob       |
+Address =
+| addressId | personId | city          | state      |
+| --------- | -------- | ------------- | ---------- |
+| 1         | 2        | New York City | New York   |
+| 2         | 3        | Leetcode      | California |
+Output
+| firstName | lastName | city          | state    |
+| --------- | -------- | ------------- | -------- |
+| Allen     | Wang     | null          | null     |
+| Bob       | Alice    | New York City | New York |
+Expected
+| firstName | lastName | city          | state    |
+| --------- | -------- | ------------- | -------- |
+| Allen     | Wang     | null          | null     |
+| Bob       | Alice    | New York City | New York |
+
+
+RESPOSTA:
+
+SELECT firstName, lastName, city, state 
+FROM Person LEFT JOIN Address
+ON Person.personId = Address.personId
